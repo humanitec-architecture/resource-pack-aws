@@ -3,12 +3,12 @@ output "name" {
 }
 
 output "username" {
-  value     = module.db.db_instance_username
+  value     = random_string.random.result
   sensitive = true
 }
 
 output "password" {
-  value     = var.password
+  value     = random_password.random.result
   sensitive = true
 }
 

@@ -3,6 +3,18 @@ locals {
   default_name = trimsuffix(substr("${var.prefix}${var.app_id}-${var.env_id}-${replace(var.res_id, ".", "-")}", 0, 63), "-")
 }
 
+resource "random_string" "random" {
+  length           = 16
+  special          = true
+  override_special = "/@£$"
+}
+
+resource "random_password" "random" {
+  length           = 16
+  special          = true
+  override_special = "!#$%&*()-_=+[]{}<>:?"
+}
+
 module "db" {
   source  = "terraform-aws-modules/rds/aws"
   version = "6.3.0"
@@ -21,8 +33,8 @@ module "db" {
   max_allocated_storage = var.max_allocated_storage
 
   manage_master_user_password = false
-  username                    = var.username
-  password                    = var.password
+  username                    = random_string.random.result
+  password                    = random_password.random.result
 
   multi_az = var.multi_az
 

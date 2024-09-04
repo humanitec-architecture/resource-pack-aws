@@ -1,0 +1,35 @@
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 5.0"
+    }
+    mysql = {
+      source  = "petoju/mysql"
+      version = "~> 3.0"
+    }
+  }
+
+  required_version = ">= 1.3.0"
+}
+
+provider "mysql" {
+  endpoint = var.mysql_endpoint
+  username = var.mysql_username
+  password = var.mysql_password
+}
+
+
+provider "aws" {
+  region = var.region
+
+  default_tags {
+    tags = {
+      "humanitec"  = "true"
+      "hum:app"    = var.app_id
+      "hum:env"    = var.env_id
+      "hum:res"    = var.res_id
+      "managed_by" = "terraform"
+    }
+  }
+}
