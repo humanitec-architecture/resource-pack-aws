@@ -4,9 +4,10 @@ locals {
 }
 
 resource "random_string" "random" {
-  length           = 16
+  length           = 10
   special          = false
   numeric          = false
+  upper            = false
 }
 
 resource "random_password" "random" {
