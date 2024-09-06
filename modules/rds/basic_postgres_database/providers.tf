@@ -4,7 +4,7 @@ terraform {
       source  = "hashicorp/aws"
       version = "~> 5.0"
     }
-    postgres = {
+    postgresql = {
       source  = "cyrilgdn/postgresql"
       version = "~> 1.22"
     }
@@ -13,7 +13,7 @@ terraform {
   required_version = ">= 1.3.0"
 }
 
-provider "postgres" {
+provider "postgresql" {
   host     = var.endpoint
   port     = var.port
   username = var.username
