@@ -18,20 +18,20 @@ variable "database_name" {
   type = string
 }
 
-variable "postgres_endpoint" {
+variable "endpoint" {
   type = string
 }
 
-variable "postgres_port" {
+variable "port" {
   type = string
 }
 
-variable "postgres_username" {
+variable "username" {
   type      = string
   sensitive = true
 }
 
-variable "postgres_password" {
+variable "password" {
   type      = string
   sensitive = true
 }

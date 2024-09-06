@@ -4,7 +4,7 @@ terraform {
       source  = "hashicorp/aws"
       version = "~> 5.0"
     }
-    mysql = {
+    postgres = {
       source  = "cyrilgdn/postgresql"
       version = "~> 1.22"
     }
@@ -14,10 +14,10 @@ terraform {
 }
 
 provider "postgres" {
-  host     = var.postgres_endpoint
-  port     = var.postgres_port
-  username = var.postgres_username
-  password = var.postgres_password
+  host     = var.endpoint
+  port     = var.port
+  username = var.username
+  password = var.password
 }
 
 
