@@ -20,6 +20,7 @@ module "db" {
   source  = "terraform-aws-modules/rds/aws"
   version = "6.3.0"
 
+  publicly_accessible = var.publicly_accessible
   identifier = coalesce(var.name, local.default_name)
   db_name    = var.database_name
   port       = var.port

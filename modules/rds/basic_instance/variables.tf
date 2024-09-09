@@ -7,6 +7,11 @@ variable "region" {
   type = string
 }
 
+variable "publicly_accessible" {
+  type    = bool
+  default = false
+}
+
 variable "app_id" {
   type = string
 }
