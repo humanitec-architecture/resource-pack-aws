@@ -1,9 +1,9 @@
 output "name" {
-  value = module.db.db_instance_name
+  value = var.database_name
 }
 
 output "username" {
-  value     = module.db.db_instance_username
+  value     = var.username
   sensitive = true
 }
 
@@ -13,9 +13,9 @@ output "password" {
 }
 
 output "host" {
-  value = module.db.db_instance_address
+  value = var.endpoint
 }
 
 output "port" {
-  value = module.db.db_instance_port
+  value = var.port
 }

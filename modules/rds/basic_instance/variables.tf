@@ -7,6 +7,11 @@ variable "region" {
   type = string
 }
 
+variable "publicly_accessible" {
+  type    = bool
+  default = false
+}
+
 variable "app_id" {
   type = string
 }
@@ -27,16 +32,6 @@ variable "name" {
 
 variable "database_name" {
   type = string
-}
-
-variable "username" {
-  type      = string
-  sensitive = true
-}
-
-variable "password" {
-  type      = string
-  sensitive = true
 }
 
 variable "create_db_subnet_group" {

@@ -73,8 +73,6 @@ module "postgres" {
   prefix        = var.prefix
   name          = var.name
   database_name = "my_database"
-  username      = "username"
-  password      = "password"
 
   create_db_subnet_group = true
   subnet_ids             = var.subnet_ids
